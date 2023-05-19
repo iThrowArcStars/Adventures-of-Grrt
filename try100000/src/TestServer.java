@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App {
+public class TestServer {
 
     private static Scanner scanner = new Scanner(System.in);
     public static int playerHealth = 100;
@@ -17,7 +17,7 @@ public class App {
         log("The Black Sun");
         log();
         log("Que credits");
-        log("Creator: A Uhl");
+        log("Creator: Austin Uhl");
         log();
         //Skeleton fight 
         log("You wake up to a skeleton unsheathing its sword");
@@ -30,7 +30,7 @@ public class App {
             log("There is a sword on the far side of the room.");
             System.out.println("There is also a wine bottle next to you.");
             int ansr = readInt("Press '1' to grab the sword.\nPress '2' to grab the wine bottle: ");
-            switch (ansr) {
+            switch (ansr) { 
                 case 1:
                     log("");
                     log("You get the sword and kill the already dead skeleton.");
@@ -47,7 +47,7 @@ public class App {
             log("You see an exit that opens up.");
             log("You leave the cave and begin a new adventure!");
             //Option #2 of the first fight
-        } else if (answer.equalsIgnoreCase("Y")) {
+        }else if (answer.equalsIgnoreCase("Y")) {
             log();
             log("You have successfully escaped the skeleton.");
             log("You have found an exit.");
