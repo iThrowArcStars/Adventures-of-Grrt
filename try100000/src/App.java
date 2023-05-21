@@ -64,7 +64,7 @@ public class App {
         System.out.println();
     }
 
-    public static String readLine(String question) {
+    private static String readLine(String question) {
         log(question);
         return scanner.nextLine();
     }
