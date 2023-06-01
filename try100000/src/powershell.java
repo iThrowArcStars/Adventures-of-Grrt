@@ -1,9 +1,8 @@
-import java.util.Scanner;
+
 
 
 public class powershell {
 
-    private static Scanner scanner = new Scanner(System.in);
     public static int playerHealth = 100;
     public static int gold = 0;
     public static int dmg = 20;

@@ -1,22 +1,11 @@
-import java.util.Scanner;
+
 
 public class Calamity {
-    private static Scanner scanner = new Scanner(System.in);
     public static int phase = 0;
     static int roll = (int) (Math.random() * 1) + 1;
     public static char[] calamityPhase;
     public Calamity() {
     }
-    private static String readLine(String question) {
-        System.out.println(question);
-        return scanner.nextLine();
-    }
-
-    private static int readInt(String question) {
-        System.out.println(question);
-        return scanner.nextInt();
-    }
-
     public static String calamityCard() {
         switch(roll) {
             case 1:

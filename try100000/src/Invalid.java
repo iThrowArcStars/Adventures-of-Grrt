@@ -4,7 +4,6 @@ public class Invalid {
 
     private static Scanner scanner = new Scanner(System.in);
     public static int phase = 0;
-    private static int playerHealth = 100;
     public Invalid() {
     }
 
@@ -52,7 +51,7 @@ public class Invalid {
                         System.out.println("");
                         System.out.println("You get the sword and kill the already dead skeleton.");
                         System.out.println("However, you are injured and lose 25 HP");
-                        playerHealth -= 25;
+                        powershell.playerHealth -= 25;
                         break;
                     case 2:
                         System.out.println();
