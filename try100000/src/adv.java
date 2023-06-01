@@ -14,7 +14,7 @@ public class adv {
     public static void adventurePhase() {
         System.out.println("Adventure Phase");
         System.out.println();
-        int roll = 3;//(int) (Math.random() * 1) + 1;
+        int roll = (int) (Math.random() * 5) + 1;
         switch (roll) {
             case 1:
                 System.out.println("You are wandering the lands and see a caveman.");
@@ -30,7 +30,7 @@ public class adv {
                     case "n":
                         System.out.println("You successfully avoided Grrt, however " );
                         break;
-                    default: System.out.println(ansr1+">>>>>>>>.>>>>>>...>>>>>");
+                    default: System.out.println("Error something went wrong... Please report this if you see it E#adv.aPC1: ");
                 }
                 break;
             case 2:
@@ -84,7 +84,7 @@ public class adv {
                         case "N":
                         case "n":
                             System.out.println("You escape to find a nearby town. ");
-                            town.townPhase();
+                            Town.townPhase();
                         break;
                     }
                     break;
@@ -102,11 +102,11 @@ public class adv {
                 switch(ansr5) {
                     case "Y":
                     case "y":
-                        town.townPhase();
+                        Town.townPhase();
                     break;
                     case "N":
                     case "n":
-                        adventurePhase();
+                        GameReset.resetAdventurePhase();
                     break;
                 }
                 break;
