@@ -11,10 +11,6 @@ public class adv {
         return scanner.nextLine();
     }
 
-    private static int readInt(String question) {
-        System.out.println(question);
-        return scanner.nextInt();
-    }
     public static void adventurePhase() {
         System.out.println("Adventure Phase");
         System.out.println();
