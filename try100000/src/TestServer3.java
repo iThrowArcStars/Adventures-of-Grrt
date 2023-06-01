@@ -56,13 +56,14 @@ public class TestServer3 {
             
             // Option #2 of the first fight
             } else if 
-             (answer.equalsIgnoreCase("Y")) 
+             (answer.equalsIgnoreCase("Y")) {
                 System.out.println();
                 System.out.println("You have successfully escaped the skeleton.");
                 System.out.println("You have found an exit.");
                 System.out.println("You leave the cave and begin a new adventure!");
                 phase = 1;
             }
+        }
         
         if (phaseCheck().equals("Adventure Phase")) {
             // Call the adventure phase method
