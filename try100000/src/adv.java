@@ -84,7 +84,7 @@ public class adv {
                         case "N":
                         case "n":
                             System.out.println("You escape to find a nearby town. ");
-                            Town.townPhase();
+                            town.townPhase();
                         break;
                     }
                     break;
@@ -102,7 +102,7 @@ public class adv {
                 switch(ansr5) {
                     case "Y":
                     case "y":
-                        Town.townPhase();
+                        town.townPhase();
                     break;
                     case "N":
                     case "n":
