@@ -1,18 +1,24 @@
-
+import java.util.Scanner;
 public class town {
+    private static Scanner scanner = new Scanner(System.in);
+    private static String readLine(String question) {
+        System.out.println(question);
+        return scanner.nextLine();
+    }
     public static void townPhase() {
         System.out.println("Town Phase");
         
         // Example of different actions in the town
-        visitShop();
-        interactWithNPC();
-        rest();
-        takeQuest();
+        
         
         // Other town phase functionality
         // ...
     }
-    
+    private static void inventoryPrompt() {
+        System.out.println("You enter the town, would you like to check your inventory and stats? ");
+        String invPrompt = readLine("Press 'Y' to check your status, otherwise press 'N': ");
+        //switch
+    }
     private static void visitShop() {
         System.out.println("You enter a shop. What would you like to buy?");
         // Implement shop functionality
