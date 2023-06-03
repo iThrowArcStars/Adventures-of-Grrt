@@ -7,17 +7,20 @@ public class town {
     }
     public static void townPhase() {
         System.out.println("Town Phase");
-        
-        // Example of different actions in the town
-        
-        
-        // Other town phase functionality
-        // ...
+        inventoryPrompt();
     }
     private static void inventoryPrompt() {
         System.out.println("You enter the town, would you like to check your inventory and stats? ");
         String invPrompt = readLine("Press 'Y' to check your status, otherwise press 'N': ");
-        //switch
+        switch(invPrompt) {
+            case "Y":
+            case "y":
+            //call inventory method
+            break;
+            case "N":
+            case "n":
+            break;
+        }
     }
     private static void visitShop() {
         System.out.println("You enter a shop. What would you like to buy?");
