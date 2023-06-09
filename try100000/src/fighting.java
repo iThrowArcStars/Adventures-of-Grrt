@@ -1,6 +1,6 @@
 public class fighting {
     public static int remainingMobHP;
-    static void result() {
+    public static void result() {
         remainingMobHP = mobGen.mobHP[mobGen.roll] - powershell.playerDamage; 
         powershell.playerHealth = powershell.playerHealth - mobGen.mobDMG[mobGen.roll];
         System.out.println("You have " + powershell.playerHealth + "health left. ");
