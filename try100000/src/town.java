@@ -5,6 +5,10 @@ public class town {
         System.out.println(question);
         return scanner.nextLine();
     }
+    private static int readInt(String question) {
+        System.out.println(question);
+        return scanner.nextInt();
+    }
     public static void townPhase() {
         System.out.println("Town Phase");
         inventoryPrompt();
@@ -32,10 +36,37 @@ public class town {
             default: break;
         }
     }
+    static int rollItemIntPrices;
+    static String[] itemStrings = {"Sword", "Chestplate", "Guantlet"};
+    static int[] itemIntPrices = {70, 90, 40}
     private static void visitShop() {
-        System.out.println("You enter a shop. What would you like to buy?");
-        // Implement shop functionality
-        // ...
+        String answerString = readLine("Press 'Y' to go inside. Otherwise prress 'N' ");
+        switch(answerString) {
+            case "Y":
+            case "y":
+            System.out.println("You enter the shop. What would you like to buy?");
+            for(int i = 0; i < 3; i++) {
+                int roll = (int) (Math.random() * 3);
+                String rollItemString = itemStrings[roll];
+                rollItemIntPrices = itemIntPrices[roll];
+                System.out.println("(" + i + ") " + rollItemString + "Cost: ");
+                System.out.println("    Price: " + rollItemIntPrices);
+            }
+            int answerInt = readInt("Press the corresponding number to identify which item you want to buy. ");
+            switch(answerInt) {
+                case 1:
+                    if(powershell.gold >= rollItemIntPrices) {
+                        System.out.println("The item has been added to your inventory. ");
+                        powershell.gold = powershell.gold - rollItemIntPrices;
+                    }
+                case 2:
+
+                case 3:
+                default: System.out.print("ERROR: Wrong Number/Character inputed");
+            }
+            break;
+            default: break;
+        }
     }
     
     private static void interactWithNPC() {
