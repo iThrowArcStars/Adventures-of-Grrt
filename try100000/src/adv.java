@@ -49,7 +49,8 @@ public class adv {
                             break;
                         case "N":
                         case "n":
-                            System.out.println("You successfully avoided Grrt, however ");
+                            System.out.println("You successfully avoided Grrt, however " + Calamity.calamityCard());
+                            Calamity.calamityPhase();
                             break;
                         default:
                             System.out.println("Error something went wrong... Please report this if you see it E#adv.aPC1: ");
