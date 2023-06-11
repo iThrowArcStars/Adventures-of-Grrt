@@ -45,7 +45,7 @@ public class adv {
                         case "Y":
                         case "y":
                             System.out.println("Grrt no understand. You make my life hard, in return I'll make yours Legendary.");
-                            adventureComplete = true;
+                            adventureComplete = false;
                             break;
                         case "N":
                         case "n":
@@ -64,7 +64,6 @@ public class adv {
                         if (ansr21.equalsIgnoreCase("Y")) {
                             System.out.println("You looted a sword and some gold. ");
                             System.out.println(" + 15 gold ");
-                            adventureComplete = true;
                         }
                     } else {
                         System.out.println("You made it! However" + Calamity.calamityCard());
@@ -78,9 +77,7 @@ public class adv {
                         case "y":
                             System.out.println("You take some damage");
                             powershell.playerHealth -= 15;
-                            System.out.println("Player HP: " + powershell.playerHealth);
-                            adventureComplete = true;
-                            break;
+                            System.out.println("Player HP: " + powershell.playerHealth);                            break;
                         case "N":
                         case "n":
                             System.out.println("You have opted to go around the river, you wonder what endeavor you may encounter. ");
@@ -104,7 +101,6 @@ public class adv {
                                         System.out.println("You have lived to tell the tale! However you're almost dead. ");
                                         powershell.playerHealth = 15;
                                         System.out.println("Player HP: " + powershell.playerHealth);
-                                        adventureComplete = true;
                                     }
                                     break;
                                 case "N":

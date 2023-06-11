@@ -8,18 +8,28 @@ public class town {
     public static void townPhase() {
         System.out.println("Town Phase");
         inventoryPrompt();
+        Dungeon.dungeonPhase();
     }
     private static void inventoryPrompt() {
-        System.out.println("You enter the town, would you like to check your inventory and stats? ");
+        System.out.println("You enter the town, would you like to check your weapon and stats? ");
         String invPrompt = readLine("Press 'Y' to check your status, otherwise press 'N': ");
         switch(invPrompt) {
             case "Y":
             case "y":
-            //call inventory method
+            //call stats and gold 
+            System.out.println();
+            System.out.println("Stats -- ");
+            System.out.println("Player Health: " + powershell.playerHealth);
+            System.out.println("Player Damage: " + powershell.playerDamage);
+            System.out.println("Player Defense: " + powershell.playerDefense);
+            System.out.println();
+            System.out.println("Items -- ");
+            System.out.println("Gold: " + powershell.gold);
             break;
             case "N":
             case "n":
             break;
+            default: break;
         }
     }
     private static void visitShop() {

@@ -7,7 +7,7 @@ public class powershell {
     public static int playerDamage = 25;
     public static int gold = 0;
     public static int dmg = 20;
-    public static int defense = 0;
+    public static int playerDefense = 0;
     public enum PHASE {
         INVALID,
         ADVENTURE,
