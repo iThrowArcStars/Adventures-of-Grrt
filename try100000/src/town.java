@@ -7,7 +7,12 @@ public class town {
     }
     private static int readInt(String question) {
         System.out.println(question);
+        try {
         return scanner.nextInt();
+        } catch (Exception e)
+        {
+            return -1;
+        }
     }
     public static void townPhase() {
         System.out.println("Town Phase");
@@ -16,8 +21,10 @@ public class town {
         Dungeon.dungeonPhase();
     }
     private static void inventoryPrompt() {
+        String invPrompt;
+
         System.out.println("You enter the town, would you like to check your weapon and stats? ");
-        String invPrompt = readLine("Press 'Y' to check your status, otherwise press 'N': ");
+        invPrompt = readLine("Press 'Y' to check your status, otherwise press 'N': ");
         switch(invPrompt) {
             case "Y":
             case "y":
@@ -37,11 +44,16 @@ public class town {
             default: break;
         }
     }
+
+
     static int rollItemIntPrices;
     static String[] weaponString = {"Sword", "Mace", "Bow"};
     static int[] weaponPrice = {70, 90, 40};
     static int[] weaponDMG = {25, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100};
+
+
     private static void visitShop() {
+        System.out.println("You see a shop.");
         String answerString = readLine("Press 'Y' to go inside. Otherwise prress 'N' ");
         switch(answerString) {
             case "Y":
@@ -53,25 +65,46 @@ public class town {
                     System.out.println("    Weapon Damage: " + weaponDMG[roll]);
                     System.out.println("    Price: " + weaponPrice[roll]);
                 }
-                int keeperQuestionString = readInt("Which weapon would you like? If none press 'N' ");
+                
+                int keeperQuestionString;
+                while(true)
+                {
+                    keeperQuestionString = readInt("Which weapon would you like? If none press '-1' ");
+
+                    if ((keeperQuestionString >= 0) && (keeperQuestionString <=2))
+                    {
+                        break;
+                    }
+                    if(keeperQuestionString == -1) {
+                        break;
+                    }
+                }
+
                 switch(keeperQuestionString) {
+                    case 0:
+                        if(powershell.gold >= weaponPrice[0]) {
+                            powershell.playerDamage = powershell.playerDamage + weaponDMG[0];
+                        } else {
+                            System.out.println("You do not have the money for this weapon. ");
+                        }
+                        break;
                     case 1:
-                        powershell.playerDamage = powershell.playerDamage + weaponDMG[keeperQuestionString];
+                        if(powershell.gold >= weaponPrice[1]) {
+                            powershell.playerDamage = powershell.playerDamage + weaponDMG[1];
+                        } else {
+                            System.out.println("You do not have the money for this weapon. ");
+                        }
                         break;
                     case 2:
-                        powershell.playerDamage = powershell.playerDamage + weaponDMG[keeperQuestionString];
-                        break;
-                    case 3:
-                        powershell.playerDamage = powershell.playerDamage + weaponDMG[keeperQuestionString];
-                        break;
+                        if(powershell.gold >= weaponPrice[2]) {
+                            powershell.playerDamage = powershell.playerDamage + weaponDMG[2];
+                        } else {
+                            System.out.println("You do not have the money for this weapon. ");
+                        }
                     default: break;
+                    case -1: break;
                 }
                 System.out.println("Player Damage: " + powershell.playerDamage);
-                break;
-            case "N":
-            case "n":
-                break;
-            default: break;
         }
     }
     

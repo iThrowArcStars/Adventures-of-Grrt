@@ -11,8 +11,17 @@ public class adv {
     public static String ansr41;
     public static String ansr5;
     public static String ansr6;
+    public static boolean lifeStatusAdv;
+    static boolean lifeStatus = true;
 
-    public adv() {
+    public static void lifeStatusAdv() {
+        if(powershell.playerHealth <= 0) {
+            lifeStatus = false;
+            Invalid.invalidPhase();
+        }
+        while(lifeStatus == true) {
+            adventurePhase();
+        }
     }
 
     private static String readLine(String question) {
@@ -29,7 +38,7 @@ public class adv {
         ansr41 = "";
         ansr5 = "";
         ansr6 = "";
-
+        
         boolean adventureComplete = false;
         while (!adventureComplete) {
             System.out.println("Adventure Phase");

@@ -20,7 +20,7 @@ public class roomGen {
             case "n":
                 System.out.println("You successfully escape the dungeon.");
                 System.out.println();
-                adv.adventurePhase();
+                adv.lifeStatusAdv();
                 break;
         }
         

@@ -30,7 +30,7 @@ public class Invalid {
     }
     public static void invalidPhase() {
        // System.out.println(phaseCheck());
-        
+        adv.lifeStatusAdv = true;
         if (phaseCheck().equals("Invalid Phase")) {
             System.out.println("The Black Sun");
             System.out.println();

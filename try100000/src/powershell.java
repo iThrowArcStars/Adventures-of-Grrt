@@ -18,6 +18,6 @@ public class powershell {
 
     public static void main(String[] args) {
         Invalid.invalidPhase();
-        adv.adventurePhase();
+        adv.lifeStatusAdv();
     }
 }
