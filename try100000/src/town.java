@@ -12,6 +12,7 @@ public class town {
     public static void townPhase() {
         System.out.println("Town Phase");
         inventoryPrompt();
+        visitShop();
         Dungeon.dungeonPhase();
     }
     private static void inventoryPrompt() {
@@ -37,34 +38,39 @@ public class town {
         }
     }
     static int rollItemIntPrices;
-    static String[] itemStrings = {"Sword", "Chestplate", "Guantlet"};
-    static int[] itemIntPrices = {70, 90, 40}
+    static String[] weaponString = {"Sword", "Mace", "Bow"};
+    static int[] weaponPrice = {70, 90, 40};
+    static int[] weaponDMG = {25, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100};
     private static void visitShop() {
         String answerString = readLine("Press 'Y' to go inside. Otherwise prress 'N' ");
         switch(answerString) {
             case "Y":
             case "y":
-            System.out.println("You enter the shop. What would you like to buy?");
-            for(int i = 0; i < 3; i++) {
-                int roll = (int) (Math.random() * 3);
-                String rollItemString = itemStrings[roll];
-                rollItemIntPrices = itemIntPrices[roll];
-                System.out.println("(" + i + ") " + rollItemString + "Cost: ");
-                System.out.println("    Price: " + rollItemIntPrices);
-            }
-            int answerInt = readInt("Press the corresponding number to identify which item you want to buy. ");
-            switch(answerInt) {
-                case 1:
-                    if(powershell.gold >= rollItemIntPrices) {
-                        System.out.println("The item has been added to your inventory. ");
-                        powershell.gold = powershell.gold - rollItemIntPrices;
-                    }
-                case 2:
-
-                case 3:
-                default: System.out.print("ERROR: Wrong Number/Character inputed");
-            }
-            break;
+                System.out.println("This is what's for sale:");
+                for(int i = 0; i < 3; i++) {
+                    int roll = (int) (Math.random() * 3);
+                    System.out.println("("+ i +")" + weaponString[roll]);
+                    System.out.println("    Weapon Damage: " + weaponDMG[roll]);
+                    System.out.println("    Price: " + weaponPrice[roll]);
+                }
+                int keeperQuestionString = readInt("Which weapon would you like? If none press 'N' ");
+                switch(keeperQuestionString) {
+                    case 1:
+                        powershell.playerDamage = powershell.playerDamage + weaponDMG[keeperQuestionString];
+                        break;
+                    case 2:
+                        powershell.playerDamage = powershell.playerDamage + weaponDMG[keeperQuestionString];
+                        break;
+                    case 3:
+                        powershell.playerDamage = powershell.playerDamage + weaponDMG[keeperQuestionString];
+                        break;
+                    default: break;
+                }
+                System.out.println("Player Damage: " + powershell.playerDamage);
+                break;
+            case "N":
+            case "n":
+                break;
             default: break;
         }
     }
