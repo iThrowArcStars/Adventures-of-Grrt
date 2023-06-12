@@ -10,6 +10,7 @@ public class adv {
     public static String ansr4;
     public static String ansr41;
     public static String ansr5;
+    public static String ansr6;
 
     public adv() {
     }
@@ -27,12 +28,13 @@ public class adv {
         ansr4 = "";
         ansr41 = "";
         ansr5 = "";
+        ansr6 = "";
 
         boolean adventureComplete = false;
         while (!adventureComplete) {
             System.out.println("Adventure Phase");
             System.out.println();
-            int roll =  (int) (Math.random() * 5) + 1;
+            int roll =  (int) (Math.random() * 6) + 1;
             switch (roll) {
                 case 1:
                     System.out.println("You are wandering the lands and see a caveman.");
@@ -47,7 +49,8 @@ public class adv {
                             break;
                         case "N":
                         case "n":
-                            System.out.println("You successfully avoided Grrt, however ");
+                            System.out.println("You successfully avoided Grrt, however " + Calamity.calamityCard());
+                            Calamity.calamityPhase();
                             break;
                         default:
                             System.out.println("Error something went wrong... Please report this if you see it E#adv.aPC1: ");
@@ -136,6 +139,21 @@ public class adv {
                         default:
                             System.out.println("Invalid input. Please try again. ");
                             break;
+                    }
+                    break;
+                case 6:
+                    System.out.println("You see a cave, it may lead to a dungeon.");
+                    System.out.println("Would you like to check the cave out?");
+                    ansr6 = readLine("Press 'Y' to enter the cave, otherwise press 'N'.");
+                    switch(ansr6) {
+                        case "Y":
+                        case "y":
+                        Dungeon.dungeonPhase();
+                        break;
+                        case "N":
+                        case "n":
+                        System.out.println("You move along. ");
+                        break;
                     }
                     break;
                 default:
